@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="css/clock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="clock-container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-clock"></i> Global Time Zone Clock</h1>
+            <p>Current time across different regions</p>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="control-group">
+                <label for="timeFormat">Time Format:</label>
+                <select id="timeFormat">
+                    <option value="12">12-Hour (AM/PM)</option>
+                    <option value="24">24-Hour</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="clockSpeed">Update Speed:</label>
+                <select id="clockSpeed">
+                    <option value="1000">Normal (1s)</option>
+                    <option value="100">Fast (0.1s)</option>
+                    <option value="10">Very Fast (0.01s)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <button id="toggleTheme" class="theme-btn">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
+
+        <!-- Clock Grid -->
+        <div class="clocks-grid">
+            <!-- North America -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇺🇸 New York</h2>
+                    <p class="timezone">EST/EDT (UTC-5/-4)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-newyork">00:00:00</div>
+                    <div class="date" id="date-newyork">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-newyork">UTC-5</small>
+                </div>
+            </div>
+
+            <!-- Central America -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇲🇽 Mexico City</h2>
+                    <p class="timezone">CST/CDT (UTC-6/-5)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-mexicocity">00:00:00</div>
+                    <div class="date" id="date-mexicocity">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-mexicocity">UTC-6</small>
+                </div>
+            </div>
+
+            <!-- South America -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇧🇷 São Paulo</h2>
+                    <p class="timezone">BRT/BRST (UTC-3/-2)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-saopaulo">00:00:00</div>
+                    <div class="date" id="date-saopaulo">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-saopaulo">UTC-3</small>
+                </div>
+            </div>
+
+            <!-- Europe -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇬🇧 London</h2>
+                    <p class="timezone">GMT/BST (UTC+0/+1)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-london">00:00:00</div>
+                    <div class="date" id="date-london">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-london">UTC+0</small>
+                </div>
+            </div>
+
+            <!-- Central Europe -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇩🇪 Berlin</h2>
+                    <p class="timezone">CET/CEST (UTC+1/+2)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-berlin">00:00:00</div>
+                    <div class="date" id="date-berlin">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-berlin">UTC+1</small>
+                </div>
+            </div>
+
+            <!-- Middle East -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇦🇪 Dubai</h2>
+                    <p class="timezone">GST (UTC+4)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-dubai">00:00:00</div>
+                    <div class="date" id="date-dubai">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-dubai">UTC+4</small>
+                </div>
+            </div>
+
+            <!-- South Asia -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇮🇳 New Delhi</h2>
+                    <p class="timezone">IST (UTC+5:30)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-delhi">00:00:00</div>
+                    <div class="date" id="date-delhi">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-delhi">UTC+5:30</small>
+                </div>
+            </div>
+
+            <!-- Southeast Asia -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇹🇭 Bangkok</h2>
+                    <p class="timezone">ICT (UTC+7)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-bangkok">00:00:00</div>
+                    <div class="date" id="date-bangkok">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-bangkok">UTC+7</small>
+                </div>
+            </div>
+
+            <!-- East Asia -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇨🇳 Shanghai</h2>
+                    <p class="timezone">CST (UTC+8)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-shanghai">00:00:00</div>
+                    <div class="date" id="date-shanghai">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-shanghai">UTC+8</small>
+                </div>
+            </div>
+
+            <!-- Japan -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇯🇵 Tokyo</h2>
+                    <p class="timezone">JST (UTC+9)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-tokyo">00:00:00</div>
+                    <div class="date" id="date-tokyo">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-tokyo">UTC+9</small>
+                </div>
+            </div>
+
+            <!-- Australia -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇦🇺 Sydney</h2>
+                    <p class="timezone">AEST/AEDT (UTC+10/+11)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-sydney">00:00:00</div>
+                    <div class="date" id="date-sydney">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-sydney">UTC+10</small>
+                </div>
+            </div>
+
+            <!-- New Zealand -->
+            <div class="clock-card">
+                <div class="card-header">
+                    <h2>🇳🇿 Auckland</h2>
+                    <p class="timezone">NZST/NZDT (UTC+12/+13)</p>
+                </div>
+                <div class="digital-display">
+                    <div class="time" id="time-auckland">00:00:00</div>
+                    <div class="date" id="date-auckland">Monday, Jan 1</div>
+                </div>
+                <div class="card-footer">
+                    <small id="offset-auckland">UTC+12</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server Time -->
+        <div class="server-time">
+            <h3><i class="fas fa-server"></i> Server Time (UTC)</h3>
+            <div class="server-display">
+                <div class="time" id="time-utc">00:00:00 UTC</div>
+                <div class="date" id="date-utc">Monday, January 1, 2024</div>
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="info-panel">
+            <h3><i class="fas fa-info-circle"></i> Information</h3>
+            <div class="info-content">
+                <p><strong>Current Daylight Saving Time Status:</strong></p>
+                <ul id="dst-info">
+                    <li>Loading DST information...</li>
+                </ul>
+                <p><strong>Time Zone Tips:</strong></p>
+                <ul>
+                    <li>Hover over clock cards to see additional details</li>
+                    <li>Use the format selector to switch between 12-hour and 24-hour time</li>
+                    <li>Adjust the update speed for optimal performance</li>
+                    <li>Daylight Saving Time is automatically applied where applicable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/clock.js"></script>
+</body>
+</html>
