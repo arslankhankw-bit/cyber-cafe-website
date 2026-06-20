@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Session - CyberHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-gamepad"></i> CyberHub
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="booking.html" class="nav-link nav-link-btn active">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <h1 class="page-title">Book Your Gaming Session</h1>
+            <div class="booking-wrapper">
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Booking Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Start Time *</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration">Duration (Hours) *</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="1">1 Hour</option>
+                                <option value="2">2 Hours</option>
+                                <option value="3">3 Hours</option>
+                                <option value="4">4 Hours</option>
+                                <option value="5">5 Hours</option>
+                                <option value="6">6 Hours</option>
+                                <option value="8">8 Hours</option>
+                                <option value="10">10 Hours</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">Gaming Plan *</label>
+                            <select id="plan" name="plan" required>
+                                <option value="">Select plan</option>
+                                <option value="casual">Casual Gamer - $5/hr</option>
+                                <option value="pro">Pro Player - $8/hr</option>
+                                <option value="elite">Elite Competitor - $12/hr</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="station">Preferred Gaming Station *</label>
+                        <select id="station" name="station" required>
+                            <option value="">Select station</option>
+                            <option value="standard">Standard Station</option>
+                            <option value="premium">Premium Station</option>
+                            <option value="ultimate">Ultimate VIP Station</option>
+                            <option value="any">Any Available</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="services">Additional Services</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="services" value="snacks">
+                                <span>Snack Pack (+$5)</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="services" value="drinks">
+                                <span>Premium Drinks (+$3)</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="services" value="recording">
+                                <span>Session Recording (+$10)</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="services" value="tournament">
+                                <span>Tournament Entry (+$15)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Special Requests</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Any special requirements or requests?"></textarea>
+                    </div>
+
+                    <div class="price-summary">
+                        <h3>Price Summary</h3>
+                        <div class="summary-item">
+                            <span>Session Cost:</span>
+                            <span id="sessionCost">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Additional Services:</span>
+                            <span id="servicesCost">$0.00</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total:</span>
+                            <span id="totalCost">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <label>
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the terms and conditions</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Complete Booking</button>
+                </form>
+
+                <div class="booking-info">
+                    <h3>Booking Information</h3>
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> Important Details</h4>
+                        <ul>
+                            <li>Arrive 10 minutes before your session</li>
+                            <li>Valid ID required at check-in</li>
+                            <li>Minimum age: 13 years (parental consent required)</li>
+                            <li>Cancellations must be made 2 hours before booking</li>
+                            <li>No refunds for no-shows</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h4><i class="fas fa-headset"></i> Support</h4>
+                        <p>Need help booking? Call us at <strong>+1 (555) 123-4567</strong> or email <strong>bookings@cyberhub.com</strong></p>
+                    </div>
+                    <div class="info-box">
+                        <h4><i class="fas fa-clock"></i> Operating Hours</h4>
+                        <p>Monday - Sunday: 10:00 AM - 2:00 AM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CyberHub</h4>
+                    <p>Your ultimate destination for gaming, streaming, and digital entertainment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CyberHub Gaming Lounge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>
