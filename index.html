@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberHub - Premium Gaming Lounge</title>
+    <title>CyberHub - Indian Cyber Cafe & Printing Services</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-gamepad"></i> CyberHub
+                <span class="logo-icon">💻</span> CyberHub India
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="booking.html" class="nav-link nav-link-btn">Book Now</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -32,9 +30,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to CyberHub</h1>
-            <p>Experience the Ultimate Gaming Experience</p>
-            <a href="booking.html" class="cta-btn">Book Your Session</a>
+            <h1 class="hero-title">Welcome to CyberHub India</h1>
+            <p class="hero-subtitle">Your Complete Solution for Internet, Printing & Document Services</p>
+            <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Explore Services</button>
         </div>
         <div class="hero-background"></div>
     </section>
@@ -44,35 +42,76 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
+                <!-- Service 1 -->
                 <div class="service-card">
-                    <i class="fas fa-desktop"></i>
-                    <h3>High-End Gaming PCs</h3>
-                    <p>Latest gaming rigs with RTX 4090 graphics and powerful processors for ultimate performance.</p>
+                    <div class="service-icon">🌐</div>
+                    <h3>Internet Services</h3>
+                    <p>High-speed internet access perfect for work, gaming, and browsing. Unlimited data with blazing-fast speeds.</p>
+                    <ul class="service-features">
+                        <li>✓ 100 Mbps Internet</li>
+                        <li>✓ Hourly Rates</li>
+                        <li>✓ Student Discounts</li>
+                    </ul>
                 </div>
+
+                <!-- Service 2 -->
                 <div class="service-card">
-                    <i class="fas fa-wifi"></i>
-                    <h3>Ultra-Fast Internet</h3>
-                    <p>1000 Mbps fiber optic connection for zero lag and smooth online gameplay.</p>
+                    <div class="service-icon">🖨️</div>
+                    <h3>Document Printing</h3>
+                    <p>Professional B&W and color printing for all your document needs. Quick turnaround time guaranteed.</p>
+                    <ul class="service-features">
+                        <li>✓ B&W Printing</li>
+                        <li>✓ Color Printing</li>
+                        <li>✓ Spiral Binding</li>
+                    </ul>
                 </div>
+
+                <!-- Service 3 -->
                 <div class="service-card">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Premium Audio</h3>
-                    <p>Professional-grade headphones and surround sound systems for immersive experience.</p>
+                    <div class="service-icon">📸</div>
+                    <h3>Photo Printing</h3>
+                    <p>Premium quality photo prints in various sizes. Perfect for portfolios, albums, and memories.</p>
+                    <ul class="service-features">
+                        <li>✓ Multiple Sizes</li>
+                        <li>✓ HD Quality</li>
+                        <li>✓ Bulk Discounts</li>
+                    </ul>
                 </div>
+
+                <!-- Service 4 -->
                 <div class="service-card">
-                    <i class="fas fa-couch"></i>
-                    <h3>Comfort Seating</h3>
-                    <p>Ergonomic gaming chairs designed for extended play sessions without fatigue.</p>
+                    <div class="service-icon">📋</div>
+                    <h3>Scanning & Xerox</h3>
+                    <p>High-quality document scanning and photocopying services. Convert physical documents to digital instantly.</p>
+                    <ul class="service-features">
+                        <li>✓ Fast Scanning</li>
+                        <li>✓ Clear Copies</li>
+                        <li>✓ Bulk Orders</li>
+                    </ul>
                 </div>
+
+                <!-- Service 5 -->
                 <div class="service-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Food & Beverages</h3>
-                    <p>Grab snacks and drinks from our café while you game without leaving your station.</p>
+                    <div class="service-icon">📄</div>
+                    <h3>Document Services</h3>
+                    <p>Comprehensive document solutions including typing, editing, formatting, and digitization services.</p>
+                    <ul class="service-features">
+                        <li>✓ Typing Services</li>
+                        <li>✓ File Conversion</li>
+                        <li>✓ Formatting</li>
+                    </ul>
                 </div>
+
+                <!-- Service 6 -->
                 <div class="service-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Secure Environment</h3>
-                    <p>24/7 security surveillance and staff to ensure a safe gaming environment.</p>
+                    <div class="service-icon">📹</div>
+                    <h3>Video Conferencing</h3>
+                    <p>Professional video conferencing setup with high-quality audio and video. Perfect for business meetings.</p>
+                    <ul class="service-features">
+                        <li>✓ HD Quality</li>
+                        <li>✓ Professional Setup</li>
+                        <li>✓ Hourly Rates</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -81,46 +120,145 @@
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title">Pricing Plans</h2>
+            <h2 class="section-title">Pricing & Rates</h2>
             <div class="pricing-grid">
+                <!-- Internet Pricing -->
                 <div class="pricing-card">
-                    <h3>Casual Gamer</h3>
-                    <div class="price">$5<span>/hour</span></div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Standard Gaming PC</li>
-                        <li><i class="fas fa-check"></i> 100 Mbps Internet</li>
-                        <li><i class="fas fa-check"></i> Basic Headphones</li>
-                        <li><i class="fas fa-times"></i> Priority Support</li>
-                    </ul>
-                    <a href="booking.html" class="plan-btn">Select Plan</a>
+                    <h3>🌐 Internet Services</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <span>Hourly Rate</span>
+                            <span class="price">₹30/hour</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Half Day (4h)</span>
+                            <span class="price">₹100</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Full Day (8h)</span>
+                            <span class="price">₹180</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Student/Hour</span>
+                            <span class="price">₹25</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="pricing-card featured">
-                    <div class="badge">Popular</div>
-                    <h3>Pro Player</h3>
-                    <div class="price">$8<span>/hour</span></div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> High-End Gaming PC</li>
-                        <li><i class="fas fa-check"></i> 500 Mbps Internet</li>
-                        <li><i class="fas fa-check"></i> Premium Headphones</li>
-                        <li><i class="fas fa-check"></i> Priority Support</li>
-                    </ul>
-                    <a href="booking.html" class="plan-btn">Select Plan</a>
-                </div>
+
+                <!-- Printing Pricing -->
                 <div class="pricing-card">
-                    <h3>Elite Competitor</h3>
-                    <div class="price">$12<span>/hour</span></div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Ultimate Gaming PC</li>
-                        <li><i class="fas fa-check"></i> 1000 Mbps Internet</li>
-                        <li><i class="fas fa-check"></i> Audiophile Headphones</li>
-                        <li><i class="fas fa-check"></i> VIP Support</li>
-                    </ul>
-                    <a href="booking.html" class="plan-btn">Select Plan</a>
+                    <h3>🖨️ Document Printing</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <span>B&W (A4)</span>
+                            <span class="price">₹3/page</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Color (A4)</span>
+                            <span class="price">₹10/page</span>
+                        </div>
+                        <div class="price-item">
+                            <span>B&W (A3)</span>
+                            <span class="price">₹5/page</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Spiral Binding</span>
+                            <span class="price">₹50-100</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="pricing-note">
-                <h4>Package Deals Available</h4>
-                <p>Buy 10 hours - Get 2 free | Buy 20 hours - Get 5 free | Buy 50 hours - Get 15 free</p>
+
+                <!-- Photo Printing -->
+                <div class="pricing-card">
+                    <h3>📸 Photo Printing</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <span>4x6 inch</span>
+                            <span class="price">₹15</span>
+                        </div>
+                        <div class="price-item">
+                            <span>5x7 inch</span>
+                            <span class="price">₹25</span>
+                        </div>
+                        <div class="price-item">
+                            <span>8x10 inch</span>
+                            <span class="price">₹40</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Passport (2x2)</span>
+                            <span class="price">₹5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xerox & Scanning -->
+                <div class="pricing-card">
+                    <h3>📋 Xerox & Scanning</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <span>Xerox B&W</span>
+                            <span class="price">₹2/page</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Xerox Color</span>
+                            <span class="price">₹5/page</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Scanning (600 DPI)</span>
+                            <span class="price">₹3/page</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Lamination</span>
+                            <span class="price">₹10-20/sheet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Services -->
+                <div class="pricing-card">
+                    <h3>📄 Document Services</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <span>Typing Service</span>
+                            <span class="price">₹100-200/hr</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Certificate Printing</span>
+                            <span class="price">₹50-100</span>
+                        </div>
+                        <div class="price-item">
+                            <span>ID Card Printing</span>
+                            <span class="price">₹80-150</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Passport Photo Edit</span>
+                            <span class="price">₹50/set</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="pricing-card">
+                    <h3>➕ Additional Services</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <span>WiFi Internet</span>
+                            <span class="price">Free</span>
+                        </div>
+                        <div class="price-item">
+                            <span>USB Drive</span>
+                            <span class="price">₹20 (Refund.)</span>
+                        </div>
+                        <div class="price-item">
+                            <span>CD/DVD Burning</span>
+                            <span class="price">₹30-50</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Video Conferencing</span>
+                            <span class="price">₹100/hour</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -129,42 +267,31 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-wrapper">
+            <div class="contact-content">
                 <div class="contact-info">
                     <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>123 Gaming Street, Tech City, TC 12345</p>
-                        </div>
+                        <h3>📍 Address</h3>
+                        <p>123 Cyber Street<br>Connaught Place<br>Delhi, India - 110001</p>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
+                        <h3>📞 Phone</h3>
+                        <p>+91 98765 43210<br>+91 98765 43211</p>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@cyberhub.com</p>
-                        </div>
+                        <h3>✉️ Email</h3>
+                        <p>info@cyberhub-india.com<br>support@cyberhub-india.com</p>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Hours</h4>
-                            <p>Mon-Sun: 10:00 AM - 2:00 AM</p>
-                        </div>
+                        <h3>🕐 Working Hours</h3>
+                        <p>Mon-Sat: 9:00 AM - 10:00 PM<br>Sunday: 10:00 AM - 8:00 PM</p>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form">
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
                     <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
@@ -175,8 +302,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>CyberHub</h4>
-                    <p>Your ultimate destination for gaming, streaming, and digital entertainment.</p>
+                    <h4>CyberHub India</h4>
+                    <p>Your trusted partner for all internet and printing solutions.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -184,21 +311,21 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">WhatsApp</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 CyberHub Gaming Lounge. All rights reserved.</p>
+                <p>&copy; 2024 CyberHub India. All rights reserved. | GST Registered</p>
             </div>
         </div>
     </footer>
