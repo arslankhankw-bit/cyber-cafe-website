@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="weather-container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+            <p>Get real-time weather information for any location</p>
+        </div>
+
+        <!-- Search Panel -->
+        <div class="search-panel">
+            <div class="search-wrapper">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <button id="locationBtn" class="location-btn" title="Use my location">
+                    <i class="fas fa-location-dot"></i> My Location
+                </button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="error-message hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorText"></span>
+        </div>
+
+        <!-- Weather Content -->
+        <div id="weatherContent" class="weather-content hidden">
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="location-info">
+                    <h2 id="cityName">Loading...</h2>
+                    <p id="locationDetails"></p>
+                    <p id="lastUpdate" class="update-time"></p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temperature-section">
+                        <div class="temperature" id="temperature">--°C</div>
+                        <div class="weather-description">
+                            <div id="weatherDesc">--</div>
+                            <p id="weatherDetails"></p>
+                        </div>
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="Weather Icon">
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-droplet"></i>
+                        <div>
+                            <p>Humidity</p>
+                            <span id="humidity">--%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <p>Wind Speed</p>
+                            <span id="windSpeed">-- m/s</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-gauge"></i>
+                        <div>
+                            <p>Pressure</p>
+                            <span id="pressure">-- hPa</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <p>Visibility</p>
+                            <span id="visibility">-- km</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-cloud"></i>
+                        <div>
+                            <p>Cloud Cover</p>
+                            <span id="cloudCover">--%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <p>UV Index</p>
+                            <span id="uvIndex">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extended Details -->
+            <div class="extended-details">
+                <h3><i class="fas fa-list"></i> Detailed Information</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <label>Feels Like</label>
+                        <span id="feelsLike">--°C</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Min Temperature</label>
+                        <span id="tempMin">--°C</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Max Temperature</label>
+                        <span id="tempMax">--°C</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Dew Point</label>
+                        <span id="dewPoint">--°C</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Sunrise</label>
+                        <span id="sunrise">--:--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Sunset</label>
+                        <span id="sunset">--:--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Day Length</label>
+                        <span id="dayLength">-- hours</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Precipitation</label>
+                        <span id="precipitation">-- mm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast -->
+            <div class="forecast">
+                <h3><i class="fas fa-calendar-days"></i> 7-Day Forecast</h3>
+                <div class="forecast-grid" id="forecastGrid">
+                    <!-- Forecast cards will be generated here -->
+                </div>
+            </div>
+
+            <!-- Hourly Forecast -->
+            <div class="hourly-forecast">
+                <h3><i class="fas fa-clock"></i> Hourly Forecast (Next 24 Hours)</h3>
+                <div class="hourly-grid" id="hourlyGrid">
+                    <!-- Hourly forecast will be generated here -->
+                </div>
+            </div>
+
+            <!-- Air Quality -->
+            <div class="air-quality">
+                <h3><i class="fas fa-leaf"></i> Air Quality Index (AQI)</h3>
+                <div class="aqi-container">
+                    <div class="aqi-gauge">
+                        <div class="aqi-value" id="aqiValue">--</div>
+                        <div class="aqi-label" id="aqiLabel">Loading...</div>
+                    </div>
+                    <div class="pollutants-grid" id="pollutantsGrid">
+                        <!-- Pollutants will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Searches -->
+        <div class="recent-searches">
+            <h3><i class="fas fa-history"></i> Recent Searches</h3>
+            <div class="recent-list" id="recentList">
+                <p class="empty">No recent searches</p>
+            </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="info-panel">
+            <h3><i class="fas fa-info-circle"></i> Weather Information</h3>
+            <div class="info-content">
+                <p><strong>Data Source:</strong> Open-Meteo API (Free, no API key required)</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Real-time weather data for any location</li>
+                    <li>7-day weather forecast</li>
+                    <li>Hourly forecast for 24 hours</li>
+                    <li>Air quality index (AQI)</li>
+                    <li>Detailed weather metrics</li>
+                    <li>Geolocation support</li>
+                    <li>Search history</li>
+                </ul>
+                <p><strong>Notes:</strong></p>
+                <ul>
+                    <li>No API key required - uses free public API</li>
+                    <li>All data is real-time and accurate</li>
+                    <li>Your location data is never stored</li>
+                    <li>Works in all modern browsers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/weather.js"></script>
+</body>
+</html>
